@@ -9,13 +9,12 @@ $values = {
   'GEM'    => 'the-gem',
   'REPO'   => 'theRepo',
   'MODULE' => 'TheModule',
-  'BIN'    => ':GEM',
-  'LIB'    => ':GEM',
-  'CLI'    => ':GEM',
-  'AUTHOR' => 'Baptiste Fontaine',
-  'EMAIL'  => 'batifon@yahoo.fr',
+  'BIN'    => '=GEM',
+  'LIB'    => '=GEM',
+  'AUTHOR' => 'John Smith',
+  'EMAIL'  => 'jsmith@example.com',
 
-  'GITHUB_USER' => 'bfontaine'
+  'GITHUB_USER' => 'your-username'
 }
 
 # avoid mistakes in the original repo
@@ -34,7 +33,7 @@ end
 
 # enable values factoring
 $values.each do |k,v|
-  if v =~ /^:([_A-Z]+)$/
+  if v =~ /^=([_A-Z]+)$/
     $values[k] = $values[$1]
   end
 end

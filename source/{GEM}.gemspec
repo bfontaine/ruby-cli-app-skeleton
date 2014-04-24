@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
     s.files         = Dir['lib/**/*.rb']
     s.test_files    = Dir['tests/**/*.rb']
     s.require_path  = 'lib'
-    s.executables  << '{CLI}'
+    s.executables  << '{BIN}'
 
     s.add_runtime_dependency 'nokogiri', '~>1.6.1'
     s.add_runtime_dependency 'trollop',  '~>2.0'

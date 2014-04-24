@@ -5,12 +5,12 @@ require 'trollop'
 require '{LIB}'
 
 opts = Trollop.options do
-  version "{CLI} #{{MODULE}.version}"
+  version "{BIN} #{{MODULE}.version}"
   banner <<-EOS
-{CLI} is a command-line tool to scrape definitions from the Urban Dictionary.
+{BIN} is a command-line tool to scrape definitions from the Urban Dictionary.
 
 Usage:
-    {CLI} [options]
+    {BIN} [options]
 where [options] are:
 EOS
 
