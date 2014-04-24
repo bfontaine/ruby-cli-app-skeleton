@@ -6,6 +6,7 @@ F = FileUtils::Verbose
 # placeholder values
 # we might want to put them in a YAML file
 $values = {
+  'NAME'   => 'My Gem',
   'GEM'    => 'the-gem',
   'REPO'   => 'theRepo',
   'MODULE' => 'TheModule',

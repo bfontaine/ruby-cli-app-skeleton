@@ -21,6 +21,7 @@ starts with an “equal” symbol (`=`), it can take the same value as another k
 
 Initial values are:
 
+- `NAME`: the name of the project (for the README)
 - `GEM`: the gem name
 - `REPO`: the GitHub repository name
 - `MODULE`: the main module name
