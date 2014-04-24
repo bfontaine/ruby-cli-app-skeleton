@@ -4,7 +4,8 @@ require 'fileutils'
 F = FileUtils::Verbose
 
 # placeholder values
-values = {
+# we might want to put them in a YAML file
+$values = {
   'GEM'    => 'the-gem',
   'REPO'   => 'theRepo',
   'MODULE' => 'TheModule',
@@ -30,31 +31,29 @@ ARGV.each do |arg|
 end
 
 # enable values factoring
-values.each do |k,v|
+$values.each do |k,v|
   if v =~ /^:([_A-Z]+)$/
-    values[k] = values[$1]
+    $values[k] = $values[$1]
   end
 end
 
 def replace(s)
   s.gsub(/(?<!#)\{([_A-Z]+)\}/) do |placeholder|
-    values[$1] or placeholder
+    $values[$1] or placeholder
   end
 end
 
 Dir['source/**/*', 'source/**/.*'].each do |name|
-  name2 = name.sub(/^source\//, '')
+  name2 = replace(name.sub(/^source\//, ''))
 
-  puts name2
+  puts "--> #{name2}"
 
   if File.directory?(name)
-    F.mv name, replace(name2)
+    F.mkdir_p name2
     next
   end
 
   ct = replace(File.read(name))
-
-  name2 = replace(name2)
 
   File.open(name2, 'w') { |f| f.write ct }
 end
