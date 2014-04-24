@@ -24,6 +24,7 @@ You can now either continue on the same git history or start from scratch:
 * Dependencies: Nokogiri, Trollop, and Fakeweb & test-unit for testing
 * Gem specification
 * Travis & Coveralls integration (you need to register the repo)
+* An MIT `LICENSE` file and a `README.md`
 
 This heavily based on the architecture of [`ud`][ud].
 

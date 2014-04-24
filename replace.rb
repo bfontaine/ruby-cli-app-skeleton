@@ -10,7 +10,9 @@ values = {
   'MODULE' => 'TheModule',
   'BIN'    => ':GEM',
   'LIB'    => ':GEM',
-  'CLI'    => ':GEM'
+  'CLI'    => ':GEM',
+  'AUTHOR' => 'Baptiste Fontaine',
+  'EMAIL'  => 'batifon@yahoo.fr'
 }
 
 # avoid mistakes in the original repo
@@ -58,3 +60,4 @@ Dir['source/**/*', 'source/**/.*'].each do |name|
 end
 
 F.rm_rf 'source'
+F.rm $0

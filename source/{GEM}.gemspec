@@ -5,12 +5,12 @@ Gem::Specification.new do |s|
     s.version       = {MODULE}.version
     s.date          = Time.now
 
-    s.summary       = 'TODO'
-    s.description   = 'TODO'
+   #s.summary       = 'TODO'
+   #s.description   = 'TODO'
     s.license       = 'MIT'
 
-    s.author        = 'Baptiste Fontaine'
-    s.email         = 'batifon@yahoo.fr'
+    s.author        = '{AUTHOR}'
+    s.email         = '{EMAIL}'
     s.homepage      = 'https://github.com/bfontaine/{REPO}'
 
     s.files         = Dir['lib/**/*.rb']
