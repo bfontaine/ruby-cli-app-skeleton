@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby
+# -*- coding: UTF-8 -*-
+
+require 'trollop'
+require '{LIB}'
+
+opts = Trollop.options do
+  version "{CLI} #{{MODULE}.version}"
+  banner <<-EOS
+{CLI} is a command-line tool to scrape definitions from the Urban Dictionary.
+
+Usage:
+    {CLI} [options]
+where [options] are:
+EOS
+
+  # opt :foo, 'desc', :type => :int, :default => 0, :short => '-f'
+
+end
+
+# ARGV: args, opts: options
