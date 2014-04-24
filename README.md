@@ -12,12 +12,6 @@ either an external HTTP API or parse HTML.
     vim replace.rb
     ./replace.rb
 
-You can now either continue on the same git history or start from scratch:
-
-    rm -rf .git
-    git init
-    git commit -m "initial commit"
-
 ## What’s provided
 
 * `bin/`, `lib/` and `tests/` directories with basic files in them
@@ -25,7 +19,12 @@ You can now either continue on the same git history or start from scratch:
 * Gem specification
 * Travis & Coveralls integration (you need to register the repo)
 * An MIT `LICENSE` file and a `README.md`
+* A `Rakefile` and a `.gitignore` files
 
 This heavily based on the architecture of [`ud`][ud].
+
+Additionally, the script create a fresh git repo and add a remote to your
+GitHub repo.
+
 
 [ud]: https://github.com/bfontaine/ud

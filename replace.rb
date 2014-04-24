@@ -13,7 +13,9 @@ $values = {
   'LIB'    => ':GEM',
   'CLI'    => ':GEM',
   'AUTHOR' => 'Baptiste Fontaine',
-  'EMAIL'  => 'batifon@yahoo.fr'
+  'EMAIL'  => 'batifon@yahoo.fr',
+
+  'GITHUB_USER' => 'bfontaine'
 }
 
 # avoid mistakes in the original repo
@@ -43,6 +45,11 @@ def replace(s)
   end
 end
 
+def system(cmd, *args)
+  puts "#{cmd} #{args*' '}"
+  Kernel.system(cmd, *args)
+end
+
 Dir['source/**/*', 'source/**/.*'].each do |name|
   name2 = replace(name.sub(/^source\//, ''))
 
@@ -60,3 +67,10 @@ end
 
 F.rm_rf 'source'
 F.rm $0
+
+F.rm_rf '.git'
+system 'git', 'init'
+if $values.has_key?('REPO') and $values.has_key?('GITHUB_USER')
+  r = "#{$values['GITHUB_USER']}/#{$values['REPO']}"
+  system 'git', 'remote', 'add', 'origin', "git@github.com:#{r}.git"
+end
